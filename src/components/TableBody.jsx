@@ -5,11 +5,11 @@ const TableBody = (props) => {
     const { movies, handleLike, handleDelete } = props;
     return (
         <>
-            <tbody>
+            <tbody className="col-md-4">
                 {movies.map((movie) => {
                     // console.log(movie)
                     return (
-                        <tr key={movie._id}>
+                        <tr className="col-md-3" key={movie._id}>
                             <td className="col-md-2">{movie.title}</td>
                             <td className="col-md-2">{movie.genre.name}</td>
                             <td className="col-md-2">{movie.numberInStock}</td>

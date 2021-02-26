@@ -1,5 +1,5 @@
 .App {
-    height: 100vh;
+    height: 200vh;
     background-color: #002A32 !important;
 }
 
@@ -8,6 +8,12 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
     font-size: 1.5rem;
+}
+
+.login {
+    padding: 2%;
+    margin-left: 5%;
+    background-color: rgba(255, 255, 255, 0.103) !important;
 }
 
 /* .tableList{
@@ -43,4 +49,9 @@
 .logo {
     height: 12%;
     width: 12%;
+}
+
+.poster{
+    height: 200px;
+    width: 163px;
 }

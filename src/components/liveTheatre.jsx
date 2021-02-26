@@ -5,10 +5,10 @@ import MovieSlider from './movieSlider';
 const LiveTheatre = () => {
     return (
         <>
-            {/* <div class="row mt-3 p-3">
+            <div className="row mt-3 p-3">
                     <MovieSlider />
-                </div> */}
-            <div class="row mt-3 p-2">
+                </div>
+            <div className="row mt-3 p-2">
                 <div className="col">
                     <Movies />
                 </div>

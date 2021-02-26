@@ -61,10 +61,8 @@ class Movies extends Component {
         return (
             <>
                 <div className="row">
-                    <div className="col-2 filter">
+                    <div className="col-md-2 filter">
                         <ListGroup
-                            // textProperty = "name"
-                            // valueProperty = "_id" 
                             items={geners}
                             selectedItem={this.state.selectedGenre}
                             onItemSelected={this.handleGenerSelect}
@@ -73,7 +71,7 @@ class Movies extends Component {
                             onformat={this.formatCount}
                             itemsCount={genreCount} />
                     </div>
-                    <div className="col-10">
+                    <div className="col-md-10">
                         <MoviesTable
                             pageSize={pageSize}
                             currentPage={currentPage}

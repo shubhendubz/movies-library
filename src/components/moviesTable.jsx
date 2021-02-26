@@ -40,10 +40,13 @@ const MoviesTable = (props) => {
         <div className="row">
             <div className="col text-light tableList">
                 <div className="row">
-                    <div className="col-md-10 pt-3">
+                    <div className="col-md-5 pt-3">
                         <span className={getBadgeClass()}>{formatCount()}</span>
-                Movies in Database
-                </div>
+                        Movies in Database
+                    </div>
+                    <div className="col-md-5">
+                        <span className="h2 text-center text-warning">Movies List</span>
+                    </div>
                     <div className="col-md-2">
                         <Pagination
                             itemsCount={count}
