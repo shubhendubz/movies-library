@@ -1,0 +1,20 @@
+import React from 'react';
+import Movies from './Movies';
+import MovieSlider from './movieSlider';
+
+const LiveTheatre = () => {
+    return (
+        <>
+            {/* <div class="row mt-3 p-3">
+                    <MovieSlider />
+                </div> */}
+            <div class="row mt-3 p-2">
+                <div className="col">
+                    <Movies />
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default LiveTheatre;
