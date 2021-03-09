@@ -2,6 +2,13 @@
 Click to see [Firebase Link](https://live-theatre.web.app/)
 <br/>
 ![record](record.gif)
+## Form Validation Screenshot
+<br/>
+### Login Page
+![login-form](loginForm.png)
+<br/>
+### Register Page
+![register-form](registerForm.png)
 
 
 
