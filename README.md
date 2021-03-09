@@ -1,14 +1,14 @@
-## Screen Recording of the task given
+# Screen Recording of the task given
 Click to see [Firebase Link](https://live-theatre.web.app/)
 <br/>
 ![record](record.gif)
 ## Form Validation Screenshot
 <br/>
 ### `Login Page`
-![login-form](loginForm.png)
+[login-form](https://github.com/shubhendubz/movies-library/blob/master/loginForm.png)
 <br/>
 ### `Register Page`
-![register-form](registerForm.png)
+[register-form](https://github.com/shubhendubz/movies-library/blob/master/registerForm.png)
 
 
 
