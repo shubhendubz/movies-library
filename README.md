@@ -6,11 +6,11 @@ Click to see [Firebase Link](https://live-theatre.web.app/)
 <br/>
 ### `Login Page`
 <br/>
-![login-form](https://github.com/shubhendubz/movies-library/blob/master/loginForm.png)
+![login-form](loginForm.png)
 <br/>
 ### `Register Page`
 <br/>
-![register-form](https://github.com/shubhendubz/movies-library/blob/master/registerForm.png)
+![register-form](registerForm.png)
 
 
 
