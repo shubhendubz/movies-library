@@ -5,10 +5,12 @@ Click to see [Firebase Link](https://live-theatre.web.app/)
 ## Form Validation Screenshot
 <br/>
 ### `Login Page`
-[login-form](https://github.com/shubhendubz/movies-library/blob/master/loginForm.png)
+<br/>
+![login-form](https://github.com/shubhendubz/movies-library/blob/master/loginForm.png)
 <br/>
 ### `Register Page`
-[register-form](https://github.com/shubhendubz/movies-library/blob/master/registerForm.png)
+<br/>
+![register-form](https://github.com/shubhendubz/movies-library/blob/master/registerForm.png)
 
 
 
