@@ -13,6 +13,8 @@ const TableHeader = (props) => {
         onSort(sortColumn)
     }
     const renderSortIcon=(column)=>{
+        if(column.key) return
+        
             const {sortColumn} = props;
             if(column.path !== sortColumn.path) return null;
             if(sortColumn.order === 'asc') return <i className="fa fa-sort-asc"></i>

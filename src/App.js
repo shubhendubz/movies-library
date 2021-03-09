@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Rental from './components/rental';
 import NotFound from './components/notFound';
@@ -8,6 +7,8 @@ import NavBar from './components/navBar';
 import HomePage from './components/homePage';
 import RegisterForm from './components/registerForm';
 import WatchList from './components/watchlist';
+import LoginForm from './components/loginForm';
+import './App.css';
 
 class App extends Component {
 
@@ -20,12 +21,14 @@ class App extends Component {
           </div>
         </div>
         <Switch>
-          <Route exact path="/" render={() => <HomePage />} />
-          <Route path="/movies" component={LiveTheatre} />
-          <Route path="/rental" render={() => <Rental />} />
-          <Route path="/Watchlist" component={WatchList} />
-          <Route path="/register" component={RegisterForm} />
+          <Route exact path="/register" component={RegisterForm} />
+          <Route exact path="/login" render={() => <LoginForm />} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/movies" component={LiveTheatre} />
+          <Route exact path="/rental" render={() => <Rental />} />
+          <Route exact path="/wishlist" component={WatchList} />
           <Route path="/not-found" exact component={NotFound} />
+          <Redirect exact to="/" from="/movies"/>
           <Redirect to="/not-found" />
         </Switch>
       </div>

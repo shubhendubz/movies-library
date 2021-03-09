@@ -8,7 +8,7 @@ const LiveTheatre = () => {
             <div className="row mt-3 p-3">
                     <MovieSlider />
                 </div>
-            <div className="row mt-3 p-2">
+            <div className="row mt-2 p-2">
                 <div className="col">
                     <Movies />
                 </div>
