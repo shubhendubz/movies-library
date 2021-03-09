@@ -12,8 +12,11 @@ class Movies extends Component {
         liked: 0,
         pageSize: 4,
         currentPage: 1,
+        selectedGenre: null,
         genreCount: 0,
-        sortColumn: { path: "title", order: 'asc' }
+        sortColumn: { path: "title", order: 'asc' },
+        searchQuery: ''
+
     }
     componentDidMount() {
         const geners = [{ _id: "", name: "All Movies" }, ...getGenres()];
@@ -47,6 +50,7 @@ class Movies extends Component {
     handleGenerSelect = (genre) => {
         this.setState({
             selectedGenre: genre,
+            searchQuery: "",
             currentPage: 1
         })
     }
@@ -55,6 +59,9 @@ class Movies extends Component {
         this.setState({
             sortColumn
         })
+    }
+    handleSearch = query => {
+        this.setState({ searchQuery: query, selectedGenre: null, currentPage: 1 });
     }
     render() {
         let { pageSize, currentPage, movies: allMovies, geners, selectedGenre, genreCount } = this.state;
@@ -82,6 +89,8 @@ class Movies extends Component {
                             handleDelete={this.handleDelete}
                             onSort={this.handleSort}
                             sortColumn={this.state.sortColumn}
+                            searchQuery={this.state.searchQuery}
+                            handleSearch={this.handleSearch}
                         />
                     </div>
                 </div>

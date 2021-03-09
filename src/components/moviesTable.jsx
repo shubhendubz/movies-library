@@ -5,19 +5,38 @@ import { Paginate } from "../utils/paginateLogic";
 import TableBody from "./TableBody";
 import TableHeader from './TableHeader';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
+import SearchBox from './searchBox';
 
 const MoviesTable = (props) => {
-    const { pageSize, currentPage, movies: allMovies, selectedGener, handlePageChange, handleLike, handleDelete, onSort, sortColumn } = props;
+    const { pageSize, currentPage, movies: allMovies, selectedGener, handlePageChange, handleLike, handleDelete, onSort, sortColumn, searchQuery, handleSearch } = props;
 
     const { length: count } = props.movies;
 
     if (count === 0) return "There is no movies in database!";
 
-    const filtered = selectedGener && selectedGener._id ? allMovies.filter(m => m.genre._id === selectedGener._id) : allMovies
+    let getPagedData = () => {
 
-    const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order])
+        let filtered = allMovies;
+        if (searchQuery)
+            filtered = allMovies.filter(m =>
+                m.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+            );
+        else if (selectedGener && selectedGener._id)
+            filtered = allMovies.filter(m => m.genre._id === selectedGener._id);
 
-    const movies = Paginate(sorted, currentPage, pageSize);
+        const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
+
+        const movies = Paginate(sorted, currentPage, pageSize);
+
+        return { totalCount: filtered.length, data: movies };
+    };
+
+    // const filtered = selectedGener && selectedGener._id ? allMovies.filter(m => m.genre._id === selectedGener._id) : allMovies
+
+    // const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order])
+
+    // const movies = Paginate(sorted, currentPage, pageSize);
 
 
     let getBadgeClass = () => {
@@ -36,13 +55,21 @@ const MoviesTable = (props) => {
         { key: 'like' },
         { key: 'delete' }
     ];
+    const { totalCount, data: movies } = getPagedData();
     return (
         <div className="row">
-            <div className="col text-light tableList">
+            <div className="col-md text-light tableList">
                 <div className="row">
-                    <div className="col-md-5 pt-3">
+                    <div className="col-md-2 pt-3">
                         <span className={getBadgeClass()}>{formatCount()}</span>
                         Movies in Database
+                    </div>
+                    <div className="col-md-3 pt-1">
+                        <Link to="/movies/new"
+                            className="btn btn-success"
+                        >
+                            New Movie
+                        </Link>
                     </div>
                     <div className="col-md-5">
                         <span className="h2 text-center text-warning">Movies List</span>
@@ -55,18 +82,23 @@ const MoviesTable = (props) => {
                             onPageChange={handlePageChange} />
                     </div>
                 </div>
-                <table className="table bg-info text-light text-center listMovies">
-                    <TableHeader
-                        onSort={onSort}
-                        sortColumn={sortColumn}
-                        columns={columns}
-                    />
-                    <TableBody
-                        movies={movies}
-                        handleLike={handleLike}
-                        handleDelete={handleDelete}
-                    />
-                </table>
+                <div className="row">
+                    <SearchBox value={searchQuery} onChange={handleSearch} />
+                </div>
+                <div className="row">
+                    <table className="table bg-info text-light text-center listMovies">
+                        <TableHeader
+                            onSort={onSort}
+                            sortColumn={sortColumn}
+                            columns={columns}
+                        />
+                        <TableBody
+                            movies={movies}
+                            handleLike={handleLike}
+                            handleDelete={handleDelete}
+                        />
+                    </table>
+                </div>
             </div>
         </div>
     );

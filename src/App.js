@@ -9,6 +9,7 @@ import RegisterForm from './components/registerForm';
 import WatchList from './components/watchlist';
 import LoginForm from './components/loginForm';
 import './App.css';
+import MovieForm from './components/movieForm';
 
 class App extends Component {
 
@@ -23,12 +24,13 @@ class App extends Component {
         <Switch>
           <Route exact path="/register" component={RegisterForm} />
           <Route exact path="/login" render={() => <LoginForm />} />
+          <Route path="/movies/:id" component={MovieForm} />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/movies" component={LiveTheatre} />
           <Route exact path="/rental" render={() => <Rental />} />
           <Route exact path="/wishlist" component={WatchList} />
           <Route path="/not-found" exact component={NotFound} />
-          <Redirect exact to="/" from="/movies"/>
+          <Redirect exact to="/" from="/movies" />
           <Redirect to="/not-found" />
         </Switch>
       </div>

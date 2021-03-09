@@ -12,18 +12,18 @@ const TableHeader = (props) => {
         }
         onSort(sortColumn)
     }
-    const renderSortIcon=(column)=>{
-        if(column.key) return
-        
-            const {sortColumn} = props;
-            if(column.path !== sortColumn.path) return null;
-            if(sortColumn.order === 'asc') return <i className="fa fa-sort-asc"></i>
-            return <i className="fa fa-sort-desc"></i>
+    const renderSortIcon = (column) => {
+        if (column.key) return
+
+        const { sortColumn } = props;
+        if (column.path !== sortColumn.path) return null;
+        if (sortColumn.order === 'asc') return <i className="fa fa-sort-asc"></i>
+        return <i className="fa fa-sort-desc"></i>
     }
     return (
         <>
-            <thead className="col-md-4">
-                <tr className="col-md-3">
+            <thead className="col-md-10">
+                <tr className="col-md-10">
                     {columns.map((column) => {
                         return (
                             <th className="col-md-2" key={column.path || column.key} onClick={() => raiseSort(column.path)}>

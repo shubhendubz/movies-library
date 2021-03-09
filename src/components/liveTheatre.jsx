@@ -6,7 +6,7 @@ const LiveTheatre = () => {
     return (
         <>
             <div className="row mt-3 p-3">
-                    <MovieSlider />
+                    {/* <MovieSlider /> */}
                 </div>
             <div className="row mt-2 p-2">
                 <div className="col">
