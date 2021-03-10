@@ -22,11 +22,11 @@ const TableHeader = (props) => {
     }
     return (
         <>
-            <thead className="col-md-10">
-                <tr className="col-md-10">
+            <thead className="col">
+                <tr className="row ml-0 mr-0">
                     {columns.map((column) => {
                         return (
-                            <th className="col-md-2" key={column.path || column.key} onClick={() => raiseSort(column.path)}>
+                            <th className="col-2" key={column.path || column.key} onClick={() => raiseSort(column.path)}>
                                 {column.label} {renderSortIcon(column)}
                             </th>
                         )

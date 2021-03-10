@@ -60,47 +60,49 @@ const MoviesTable = (props) => {
         <div className="row">
             <div className="col-md text-light tableList">
                 <div className="row">
-                    <div className="col-md-2 pt-3">
+                    <div className="col-md-5 pt-3">
                         <span className={getBadgeClass()}>{formatCount()}</span>
                         Movies in Database
                     </div>
-                    <div className="col-md-3 pt-1">
-                        <Link to="/movies/new"
-                            className="btn btn-success"
-                        >
-                            New Movie
-                        </Link>
-                    </div>
-                    <div className="col-md-5">
-                        <span className="h2 text-center text-warning">Movies List</span>
-                    </div>
-                    <div className="col-md-2">
-                        <Pagination
-                            itemsCount={count}
-                            pageSize={pageSize}
-                            currentPage={currentPage}
-                            onPageChange={handlePageChange} />
-                    </div>
+                <div className="col-md-5">
+                    <span className="h2 text-center text-warning">Movies List</span>
                 </div>
-                <div className="row">
-                    <SearchBox value={searchQuery} onChange={handleSearch} />
-                </div>
-                <div className="row">
-                    <table className="table bg-info text-light text-center listMovies">
-                        <TableHeader
-                            onSort={onSort}
-                            sortColumn={sortColumn}
-                            columns={columns}
-                        />
-                        <TableBody
-                            movies={movies}
-                            handleLike={handleLike}
-                            handleDelete={handleDelete}
-                        />
-                    </table>
+                <div className="col-md-2">
+                    <Pagination
+                        itemsCount={count}
+                        pageSize={pageSize}
+                        currentPage={currentPage}
+                        onPageChange={handlePageChange} />
                 </div>
             </div>
+            <div className="row">
+                <div className="col-3 pl-5 pt-3">
+                    <Link to="/movies/new"
+                        className="btn btn-success"
+                    >
+                        Add Movie
+                        </Link>
+                </div>
+                <div className="col-9">
+                    <SearchBox value={searchQuery} onChange={handleSearch} />
+                </div>
+            </div>
+            <div className="row">
+                <table className="table bg-info text-light text-center listMovies ">
+                    <TableHeader
+                        onSort={onSort}
+                        sortColumn={sortColumn}
+                        columns={columns}
+                    />
+                    <TableBody
+                        movies={movies}
+                        handleLike={handleLike}
+                        handleDelete={handleDelete}
+                    />
+                </table>
+            </div>
         </div>
+        </div >
     );
 }
 
