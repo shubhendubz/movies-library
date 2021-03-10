@@ -76,14 +76,14 @@ const MoviesTable = (props) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-3 pl-5 pt-3">
+                <div className="col-md-3 pl-5 pt-3">
                     <Link to="/movies/new"
                         className="btn btn-success"
                     >
                         Add Movie
                         </Link>
                 </div>
-                <div className="col-9">
+                <div className="col-md-9">
                     <SearchBox value={searchQuery} onChange={handleSearch} />
                 </div>
             </div>

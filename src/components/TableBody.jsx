@@ -22,10 +22,9 @@ const TableBody = (props) => {
                             </td>
                             <td className="col-2">
                                 <button
-                                    className="btn btn-danger btn-sm"
+                                    className="fa fa-trash btn btn-danger"
                                     onClick={() => handleDelete(movie)}
                                 >
-                                    Delete
                                 </button>
                             </td>
                         </tr>

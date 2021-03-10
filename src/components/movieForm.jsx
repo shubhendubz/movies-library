@@ -67,7 +67,7 @@ class MovieForm extends Form {
 
     render() {
         return (
-            <div className="col-4 pt-5">
+            <div className="col-md-4 pt-5">
                 <h1 className="text-warning">Movie Form</h1>
                 <form onSubmit={this.handleSubmit}>
                     {this.renderInput("title", "Title")}

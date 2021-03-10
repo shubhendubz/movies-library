@@ -8,8 +8,8 @@ import logo from '../images/logo.jpg';
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark mx-0  ">
-            <div className="row">
-                <div className="col-md-5 mt-1">
+            <div className="d-flex">
+                <div className=" float-left">
                     <Link className="navbar-brand p-1 " to="/">
                         <span>
                             <img src={logo} className="logo rounded-circle" alt="logo" />
@@ -17,7 +17,12 @@ const NavBar = () => {
                         </span>
                     </Link>
                 </div>
-                <div className="collapse navbar-collapse col-md-5" id="navbarNav">
+                <div className="float-right">
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div className="collapse navbar-collapse col-md" id="navbarNav">
                     <div className="navbar-nav">
 
                         <NavLink className="nav-link" exact to="/" >Home</NavLink>
@@ -33,11 +38,6 @@ const NavBar = () => {
                         <NavLink className="nav-link" to="/register" >Register</NavLink>
 
                     </div>
-                </div>
-                <div className="col-md-7">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
                 </div>
             </div>
         </nav>

@@ -10,7 +10,7 @@
     font-size: 1.5rem;
 }
 
-.login {
+.notice {
     padding: 2%;
     margin-left: 5%;
     background-color: rgba(255, 255, 255, 0.103) !important;
@@ -54,4 +54,35 @@
 .poster{
     height: 200px;
     width: 163px;
+}
+
+
+.notify {
+    width: 350px;
+    height: 190px;
+    margin-left: 4px;
+    /* background: rgba(255, 174, 0, 0.4); */
+    border-radius: 5px;
+}
+
+#img-notice {
+    height: 55px;
+    width: 230px;
+    margin-top: 5px;
+}
+
+#notifications{
+    margin: 0px;
+    height: 90px;
+    width: 350px;
+}
+
+#notifications a{
+    color: gold;
+    font-size: 1.2em;
+}
+
+#notifications a:hover{
+    color: orange;
+    font-size: 1.4em;
 }
