@@ -95,7 +95,9 @@ class Form extends Component {
 
     renderButton(label) {
         return (
-            <button className="btn btn-primary btn-block" disabled={this.validate()}>{label}</button>
+            // <div class="d-flex justify-content-center">
+                <button className="btn btn-primary  " disabled={this.validate()}>{label}</button>
+            // </div>
         );
     }
 

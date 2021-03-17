@@ -1,6 +1,6 @@
 import React from 'react';
 import Like from '../common/likeComponent';
-
+import { Link } from 'react-router-dom';
 const TableBody = (props) => {
     const { movies, handleLike, handleDelete } = props;
     return (
@@ -10,7 +10,7 @@ const TableBody = (props) => {
                     // console.log(movie)
                     return (
                         <tr className="row ml-0 mr-0" key={movie._id}>
-                            <td className="col-2">{movie.title}</td>
+                            <td className="col-2"> <Link to={`/movies/${movie._id}`}> {movie.title}</Link></td>
                             <td className="col-2">{movie.genre.name}</td>
                             <td className="col-2">{movie.numberInStock}</td>
                             <td className="col-2">{movie.dailyRentalRate}</td>

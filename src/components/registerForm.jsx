@@ -20,20 +20,29 @@ class RegisterForm extends Form {
 
     render() {
         return (
-            <div className="col-md-3 rounded text-light login mt-5">
-                <form onSubmit={this.handleSubmit}>
-                    <h3>Register</h3>
+            <>
+                <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-1"></div>
+                    <div className="col-md-3 rounded text-light login mt-5">
+                        <form onSubmit={this.handleSubmit}>
+                            <fieldset className="border border-warning  px-5 py-4">
+                                <legend className="text-warning h1 text-center mb-5">Register</legend>
 
-                    {this.renderInput("username", "Username")}
-                    {this.renderInput("password", "Password","password")}
-                    {this.renderInput("name", "Name")}
-                    {this.renderButton("Register")}
+                                {this.renderInput("username", "Username")}
+                                {this.renderInput("password", "Password", "password")}
+                                {this.renderInput("name", "Name")}
+                                {this.renderButton("Register")}
 
-                    {/* <p className="forgot-password text-right">
+                                {/* <p className="forgot-password text-right">
                     Already registered <a href="#">sign in?</a>
                 </p> */}
-                </form>
-            </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div className="col-md-4"></div>
+                </div>
+            </>
         );
     }
 }

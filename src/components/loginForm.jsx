@@ -18,19 +18,22 @@ class LoginForm extends Form {
         console.log('form submitted');
     };
 
-
     render() {
         return (
-            <div className="col-md-3 rounded text-light login mt-5">
-                <form onSubmit={this.handleSubmit}>
-                    <h2 className="text-warning text-center mb-5">Sign In</h2>
+            <>
+                <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-1"></div>
+                    <div className="col-md-3 rounded text-light login mt-5">
+                        <form onSubmit={this.handleSubmit} className="p-4">
+                            <fieldset className="border border-warning  px-5 py-4">
+                                <legend className="text-warning h1 text-center mb-5">Sign In</legend>
 
-                    {this.renderInput("username","Username")}
-                    {this.renderInput("password","Password","password")}
-                    {this.renderButton('Login')}
+                                {this.renderInput("username", "Username")}
+                                {this.renderInput("password", "Password", "password")}
+                                {this.renderButton('Login')}
 
-
-                    {/* <div className="form-group">
+                                {/* <div className="form-group">
                         <div className="custom-control custom-checkbox">
                             <div className="custom-control custom-checkbox">
                                 <input type="checkbox" className="custom-control-input" id="customCheck1" />
@@ -38,7 +41,7 @@ class LoginForm extends Form {
                             </div>
                         </div>
                     </div> */}
-                    {/* <Input
+                                {/* <Input
                             name="remember"
                             checked={data.remember}
                             label="Remember Me"
@@ -47,11 +50,16 @@ class LoginForm extends Form {
                         /> */}
 
 
-                    {/* <p className="forgot-password text-right">
+                                {/* <p className="forgot-password text-right">
                         Forgot <a href="#">password?</a>
                     </p> */}
-                </form>
-            </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div className="col-md-4"></div>
+                </div>
+            </>
+
         );
     }
 }

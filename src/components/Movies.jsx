@@ -6,6 +6,15 @@ import { getMovies } from '../services/fakeMovieService';
 import MoviesTable from "./moviesTable";
 
 class Movies extends Component {
+
+    // const [movies, setMovie] = useState([]);
+    // const [geners, setGenre] = useState([]);
+    // const [liked, setLike] = useState(0);
+    // const [pageSize, setPageSize] = useState(4);
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [genreCount, setGenreCount] = useState(0);
+    // const [sortColumn, setSortColumn] = useState({ path: "title", order: 'asc' });
+    //TODO: useState()
     state = {
         movies: [],
         geners: [],
@@ -71,7 +80,7 @@ class Movies extends Component {
                     <div className="col-md-2 filter">
                         <ListGroup
                             items={geners}
-                            selectedItem={this.state.selectedGenre}
+                            selectedItem={selectedGenre}
                             onItemSelected={this.handleGenerSelect}
                             showAllmovies={this.onAllMovies}
                             onBadge={this.getBadgeClass}

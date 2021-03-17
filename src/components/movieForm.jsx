@@ -67,16 +67,24 @@ class MovieForm extends Form {
 
     render() {
         return (
-            <div className="col-md-4 pt-5">
-                <h1 className="text-warning">Movie Form</h1>
-                <form onSubmit={this.handleSubmit}>
-                    {this.renderInput("title", "Title")}
-                    {this.renderSelect("genreId", "Genre", this.state.genres)}
-                    {this.renderInput("numberInStock", "Number in Stock", "number")}
-                    {this.renderInput("dailyRentalRate", "Rate")}
-                    {this.renderButton("Save")}
-                </form>
-            </div>
+            <>
+                <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4 pt-5">
+                        <form onSubmit={this.handleSubmit}>
+                            <fieldset className="border border-warning text-center px-5 py-4">
+                                <legend className="text-warning h1">Movie Form</legend>
+                                {this.renderInput("title", "Title")}
+                                {this.renderSelect("genreId", "Genre", this.state.genres)}
+                                {this.renderInput("numberInStock", "Number in Stock", "number")}
+                                {this.renderInput("dailyRentalRate", "Rate")}
+                                {this.renderButton("Save")}
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div className="col-md-4"></div>
+                </div>
+            </>
         );
     }
 }

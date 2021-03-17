@@ -1,5 +1,6 @@
 import React from 'react';
-import Movies from './Movies';
+import Movies from './MoviesFC';
+// import Movies from './Movies';
 import MovieSlider from './movieSlider';
 
 const LiveTheatre = () => {

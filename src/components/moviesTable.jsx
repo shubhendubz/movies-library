@@ -64,44 +64,44 @@ const MoviesTable = (props) => {
                         <span className={getBadgeClass()}>{formatCount()}</span>
                         Movies in Database
                     </div>
-                <div className="col-md-5">
-                    <span className="h2 text-center text-warning">Movies List</span>
+                    <div className="col-md-5">
+                        <span className="h2 text-center text-warning">Movies List</span>
+                    </div>
+                    <div className="col-md-2">
+                        <Pagination
+                            itemsCount={count}
+                            pageSize={pageSize}
+                            currentPage={currentPage}
+                            onPageChange={handlePageChange} />
+                    </div>
                 </div>
-                <div className="col-md-2">
-                    <Pagination
-                        itemsCount={count}
-                        pageSize={pageSize}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange} />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-3 pl-5 pt-3">
-                    <Link to="/movies/new"
-                        className="btn btn-success"
-                    >
-                        Add Movie
+                <div className="row">
+                    <div className="col-md-3 pl-5 pt-3">
+                        <Link to="/movies/new"
+                            className="btn btn-success"
+                        >
+                            Add Movie
                         </Link>
+                    </div>
+                    <div className="col-md-9">
+                        <SearchBox value={searchQuery} onChange={handleSearch} />
+                    </div>
                 </div>
-                <div className="col-md-9">
-                    <SearchBox value={searchQuery} onChange={handleSearch} />
+                <div className="row">
+                    <table className="table bg-info text-light text-center listMovies ">
+                        <TableHeader
+                            onSort={onSort}
+                            sortColumn={sortColumn}
+                            columns={columns}
+                        />
+                        <TableBody
+                            movies={movies}
+                            handleLike={handleLike}
+                            handleDelete={handleDelete}
+                        />
+                    </table>
                 </div>
             </div>
-            <div className="row">
-                <table className="table bg-info text-light text-center listMovies ">
-                    <TableHeader
-                        onSort={onSort}
-                        sortColumn={sortColumn}
-                        columns={columns}
-                    />
-                    <TableBody
-                        movies={movies}
-                        handleLike={handleLike}
-                        handleDelete={handleDelete}
-                    />
-                </table>
-            </div>
-        </div>
         </div >
     );
 }

@@ -1,16 +1,4 @@
 import * as genresAPI from "./fakeGenreService";
-export const genres = [
-    { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
-    { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
-    { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" }
-];
-
-export function getGenres() {
-    return genres.filter(g => g);
-}
-
-// { _id: "5b21ca3eeb7f6fbccd471831", name: "All Movies" },
-// import * as genresAPI from "./fakeGenreService";
 
 let movies = [
     {
@@ -97,7 +85,7 @@ export function getMovie(id) {
 export function saveMovie(movie) {
     let movieInDb = movies.find(m => m._id === movie._id) || {};
     movieInDb.title = movie.title;
-    movieInDb.genre = genresAPI.genres.find(g => g._id === movie.genreId);
+    movieInDb.genre._id = genresAPI.genres.find(g => g._id === movie.genreId);
     movieInDb.numberInStock = movie.numberInStock;
     movieInDb.dailyRentalRate = movie.dailyRentalRate;
 

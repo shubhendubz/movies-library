@@ -1,10 +1,13 @@
 import React from 'react';
+import UseTemp from '../common/useTemp';
 
 const Rental = () => {
     return (
-        <div>
-            <h2 className="text-light">Rental</h2>
-        </div>
+        <UseTemp>
+            <div>
+                <h2 className="text-light">Rental</h2>
+            </div>
+        </UseTemp>
     );
 }
 

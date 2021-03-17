@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import {ToastContainer} from 'react-toastify';
 import Rental from './components/rental';
 import NotFound from './components/notFound';
 import LiveTheatre from './components/liveTheatre';
@@ -8,14 +9,16 @@ import HomePage from './components/homePage';
 import RegisterForm from './components/registerForm';
 import WatchList from './components/watchlist';
 import LoginForm from './components/loginForm';
-import './App.css';
 import MovieForm from './components/movieForm';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App container-fluid">
+        <ToastContainer/>
         <div className="row ">
           <div className="col navlist ">
             <NavBar />
